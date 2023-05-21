@@ -32,13 +32,17 @@ int main()
     for (int i = 0; i < size_02; i++) {
         file_in >> arr_02[i];
     }
-    //Перестановка элементов 1-го массива наоборот
-    for (int i = 0; i < size_01 / 2; i++) {
-        std::swap(arr_01[i], arr_01[size_01 - (i + 1)]);
+    //Перестановка элементов 1-го массива ВЛЕВО с переносом первого элемента на место последнего
+    for (int i = 0; i < size_01; i++) {
+        if (i != size_01 - 1) {
+            std::swap(arr_01[i], arr_01[i + 1]);
+        }
     }
-    //Перестановка элементов 2-го массива наоборот
-    for (int i = 0; i < size_02 / 2; i++) {
-        std::swap(arr_02[i], arr_02[size_02 - (i + 1)]);
+    //Перестановка элементов 2-го массива ВПРАВО с переносом последнего элемента на место первого
+    for (int i = size_02-1; i >= 0; i--) {
+        if (i != 0) {
+            std::swap(arr_02[i], arr_02[i-1]);
+        }
     }
     //Создание out файла
     std::ofstream file_out("out.txt", std::ios::out);
@@ -65,3 +69,23 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+////Вывод в консоль
+  //std::cout << size_02 << std::endl;
+  //for (int i = 0; i < size_02; i++) {
+  //    std::cout << arr_02[i] << " ";
+  //}
+  //std::cout << std::endl;
+  //std::cout << size_01 << std::endl;
+  //for (int i = 0; i < size_01; i++) {
+  //    std::cout << arr_01[i] << " ";
+  //}
