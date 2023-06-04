@@ -1,6 +1,14 @@
 ﻿#include <iostream>
 #include <string>
-#include "class.h"
+#include "Triangle.h"
+#include "Rectangular_triangle.h"
+#include "Isosceles_triangle.h"
+#include "Equilateral_triangle.h"
+#include "Quadrilateral.h"
+#include "Rectangle.h"
+#include "Square.h"
+#include "Parallelogram.h"
+#include "Rhombus.h"
 
 int main()
 {
