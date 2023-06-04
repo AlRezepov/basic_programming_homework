@@ -121,7 +121,7 @@ public:
 	}
 };
 
-class Quadrilateral : Figure
+class Quadrilateral : public Figure
 {
 public:
 	Quadrilateral(std::string name, int side_a, int side_b, int side_c, int side_d, int angle_A, int angle_B, int angle_C, int angle_D) : Figure (4) {
@@ -233,39 +233,44 @@ public:
 	}
 };
 
+void print_info(Figure* figure)
+{
+	figure->print_info();
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
 	Figure z(0);
-	z.print_info();
+	print_info(&z);
 	std::cout << std::endl;
 	Triangle a("Треугольник", 10, 20, 30, 50, 60, 70);
-	a.print_info();
+	print_info(&a);
 	std::cout << std::endl;
 	Rectangular_triangle b(10, 20, 30, 50, 40);
-	b.print_info();
+	print_info(&b);
 	std::cout << std::endl;
 	Isosceles_triangle c(10, 20, 30, 50, 80, 50);
-	c.print_info();
+	print_info(&c);
 	std::cout << std::endl;
 	Equilateral_triangle d(30, 30, 30);
-	d.print_info();
+	print_info(&d);
 	std::cout << std::endl;
 	Quadrilateral e("Четырёхугольник", 10, 20, 30, 40, 50, 60, 70, 80);
-	e.print_info();
+	print_info(&e);
 	std::cout << std::endl;
 	Rectangle f(10, 20, 10, 20);
-	f.print_info();
+	print_info(&f);
 	std::cout << std::endl;
 	Square g(20, 20, 20, 20);
-	g.print_info();
+	print_info(&g);
 	std::cout << std::endl;
 	Parallelogram h(20, 30, 20, 30, 30, 40, 30, 40);
-	h.print_info();
+	print_info(&h);
 	std::cout << std::endl;
 	Rhombus i(30, 30, 30, 30, 30, 40, 30, 40);
-	i.print_info();
+	print_info(&i);
 	std::cout << std::endl;
 	return 0;
 }
