@@ -1,0 +1,3 @@
+E:/Job & Hobby/9_Study/Нетология_С++/4. Базовое программирование на C++/Homework/10/task_01/out/build/x64-Debug/CMakeFiles/my_first_cmake_program.dir
+E:/Job & Hobby/9_Study/Нетология_С++/4. Базовое программирование на C++/Homework/10/task_01/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+E:/Job & Hobby/9_Study/Нетология_С++/4. Базовое программирование на C++/Homework/10/task_01/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
