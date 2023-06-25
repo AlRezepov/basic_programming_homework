@@ -43,26 +43,28 @@ public:
 
 	Fraction operator++()
 	{
-		int new_numerator_ = 1 * denominator_ + numerator_;
-		return Fraction(new_numerator_, denominator_);
+		numerator_ += denominator_;
+		return *this;
 	}
 
 	Fraction operator++(int)
 	{
-		int new_numerator_ = numerator_ + 1 * denominator_;
-		return Fraction(new_numerator_, denominator_);
+		Fraction temp(numerator_, denominator_);
+		numerator_ += denominator_;
+		return temp;
 	}
 
 	Fraction operator--()
 	{
-		int new_numerator_ = 1 * denominator_ - numerator_;
-		return Fraction(new_numerator_, denominator_);
+		numerator_ -= denominator_;
+		return *this;
 	}
 
 	Fraction operator--(int)
 	{
-		int new_numerator_ = numerator_ - 1 * denominator_;
-		return Fraction(new_numerator_, denominator_);
+		Fraction temp(numerator_, denominator_);
+		numerator_ -= denominator_;
+		return temp;
 	}
 
 	int divisor(int a, int b)
@@ -156,5 +158,38 @@ int main()
 	std::cout << num_01 << "/" << den_01 << "--" << " = ";
 	f1_f2_decr.print();
 	std::cout << std::endl;
+
+	std::cout << "Проверка префиксного инкремента" << std::endl;
+		Fraction fx1(3, 7);
+		fx1.print();
+		std::cout << std::endl;
+		Fraction fx2 = ++fx1;
+		std::cout << "++ 3/7 = ";
+		fx2.print();
+		std::cout << std::endl;
+	std::cout << "Проверка постфиксного инкремента" << std::endl;
+		Fraction fx3(3, 7);
+		fx3.print();
+		std::cout << std::endl;
+		Fraction fx4 = fx3++;
+		std::cout << "3/7 ++ = ";
+		fx4.print();
+		std::cout << std::endl;
+	std::cout << "Проверка префиксного декремента" << std::endl;
+		Fraction fx5(3, 7);
+		fx5.print();
+		std::cout << std::endl;
+		Fraction fx6 = --fx5;
+		std::cout << "-- 3/7 = ";
+		fx6.print();
+		std::cout << std::endl;
+	std::cout << "Проверка постфиксного декремента" << std::endl;
+		Fraction fx7(3, 7);
+		fx7.print();
+		std::cout << std::endl;
+		Fraction fx8 = fx7--;
+		std::cout << "3/7 -- = ";
+		fx8.print();
+		std::cout << std::endl;
 	return 0;
 }

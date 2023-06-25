@@ -13,43 +13,60 @@ public:
 		denominator_ = denominator;
 	}
 
-	/*bool operator==(const Fraction& other)
+	bool operator==(const Fraction& other) const
 	{
-		return numerator_ == other.numerator_ && denominator_ == other.denominator_;
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return numerator_01 == numerator_02;
 	}
+
 
 	bool operator!=(const Fraction& other)
 	{
-		return !(*this == other);
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return !(numerator_01 == numerator_02);
 	}
 
 	bool operator<(const Fraction& other)
 	{
-		return numerator_ * other.denominator_ < other.numerator_ * denominator_;
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return numerator_01 < numerator_02;
 	}
 
 	bool operator>(const Fraction& other)
 	{
-		return numerator_ * other.denominator_ > other.numerator_ * denominator_;
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return numerator_01 > numerator_02;
 	}
 
 	bool operator<=(const Fraction& other)
 	{
-		return *this < other || *this == other;
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return numerator_01 <= numerator_02;
 	}
 
 	bool operator>=(const Fraction& other)
 	{
-		return *this > other || *this == other;
-	}*/
-
-	auto operator<=>(const Fraction&) const = default;
+		int common_denominator = denominator_ * other.denominator_;
+		int numerator_01 = numerator_ * other.denominator_;
+		int numerator_02 = other.numerator_ * denominator_;
+		return numerator_01 >= numerator_02;
+	}
 };
 
 int main()
 {
 	Fraction f1(4, 3);
-	Fraction f2(6, 11);
+	Fraction f2(8, 6);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
