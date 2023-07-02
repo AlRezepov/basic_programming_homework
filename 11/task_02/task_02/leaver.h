@@ -2,7 +2,7 @@
 
 #include <string>
 
-#ifndef task_02_EXPORTS
+#ifdef TASK02_EXPORTS
 #define LEAVER_API __declspec(dllexport)
 #else
 #define LEAVER_API __declspec(dllimport)
